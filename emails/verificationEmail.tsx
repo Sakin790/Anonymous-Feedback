@@ -9,7 +9,6 @@ import {
   Text,
   Button,
 } from "@react-email/components";
-import { dir } from "console";
 
 interface EmailTemplateProps {
   username: string;
