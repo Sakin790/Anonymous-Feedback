@@ -1,31 +1,36 @@
-import React from "react";
 import {
   Html,
   Head,
+  Font,
   Preview,
   Heading,
   Row,
   Section,
   Text,
+  Button,
 } from "@react-email/components";
+import { dir } from "console";
 
 interface EmailTemplateProps {
   username: string;
   otp: string;
 }
 
-const VerificationEmail: React.FC<EmailTemplateProps> = ({ username, otp }) => {
+export default function VerificationEmail({
+  username,
+  otp,
+}: EmailTemplateProps) {
   return (
-    <Html lang="en">
+    <Html lang="en" dir="ltr">
       <Head>
         <title>Verification Code</title>
-  
+
       </Head>
-      <Preview>Verification Code: {otp}</Preview>
+      <Preview> Verification Code : {otp} </Preview>
 
       <Section>
         <Row>
-          <Heading as="h2">Hello {username}</Heading>
+          <Heading as="h2"> Hello {username}</Heading>
         </Row>
         <Row>
           <Text>
@@ -39,13 +44,11 @@ const VerificationEmail: React.FC<EmailTemplateProps> = ({ username, otp }) => {
         </Row>
         <Row>
           <Text>
-            This OTP is valid for a few minutes. For your security, please do
-            not share this code with anyone.
+            This OTP is valid for few minutes. For
+            your security, please do not share this code with anyone.
           </Text>
         </Row>
       </Section>
     </Html>
   );
-};
-
-export default VerificationEmail;
+}
