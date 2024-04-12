@@ -2,13 +2,11 @@ import React from "react";
 import {
   Html,
   Head,
-  Font,
   Preview,
   Heading,
   Row,
   Section,
   Text,
-  Button,
 } from "@react-email/components";
 
 interface EmailTemplateProps {
